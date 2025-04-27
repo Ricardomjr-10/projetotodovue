@@ -16,9 +16,7 @@
             <!--/ Todo items -->
 
             <!-- Todo empty -->
-            <div class="text-center text-lg text-gray-500">
-                Você ainda não tem nenhuma tarefa.
-            </div>
+            <TodoEmpty/>
             <!--/ Todo empty -->
         </div>
     </div>
@@ -26,6 +24,7 @@
 </template>
 
 <script>
+import TodoEmpty from './components/TodoEmpty.vue';
 import TodoForm from './components/TodoForm.vue';
 import TodoItems from './components/TodoItems.vue';
 import TodoSpinner from './components/TodoSpinner.vue';
@@ -36,7 +35,8 @@ export default {
   components:{
     TodoSpinner,
     TodoForm,
-    TodoItems
+    TodoItems,
+    TodoEmpty
   }
 }
 </script>
