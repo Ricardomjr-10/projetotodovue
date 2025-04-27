@@ -4,9 +4,9 @@
         <div class="w-full sm:w-1/2 lg:w-1/3 mx-auto">
 
             <!-- Todo spinner -->
-            <TodoSpinner/>
+            <TodoSpinner v-if="loading" />
             <!--/ Todo spinner -->
-
+          <template v-else>
             <!-- Todo form -->
             <TodoForm/>
             <!--/ Todo form -->
@@ -18,6 +18,7 @@
             <!-- Todo empty -->
             <TodoEmpty/>
             <!--/ Todo empty -->
+          </template>
         </div>
     </div>
     <!--/ Content -->
@@ -41,14 +42,18 @@ export default {
 
   data() {
     return {
-      todos: []
+      loading: false
     }
   },
 
   created() {
+    this.loading = true
     axios.get('http://localhost:3000/todos')
     .then((response) => {
-      this.todos = response.data
+      this.$store.commit('storeTodos', response.data)
+    })
+    .finally(() => {
+      this.loading = false
     })
   }
 }
