@@ -4,13 +4,7 @@
         <div class="w-full sm:w-1/2 lg:w-1/3 mx-auto">
 
             <!-- Todo spinner -->
-            <div class="text-center">
-                <img
-                    src="@/assets/img/spinner.svg"
-                    alt=""
-                    class="inline-block w-5 h-5"
-                >
-            </div>
+            <TodoSpinner/>
             <!--/ Todo spinner -->
 
             <!-- Todo form -->
@@ -148,9 +142,14 @@ justify-center">
 </template>
 
 <script>
+import TodoSpinner from './components/TodoSpinner.vue';
+
 
 export default {
   name: 'App',
+  components:{
+    TodoSpinner
+  }
 }
 </script>
 
