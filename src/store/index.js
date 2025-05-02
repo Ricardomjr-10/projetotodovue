@@ -29,6 +29,9 @@ export default createStore({
      return axios.post('http://localhost:3000/todos', data).then((response) => {
         commit('storeTodo',response.data)
       })
+    },
+    updateTodo(context, {id, data}) {
+      return axios.post(`http://localhost:3000/${id}`, data)
     }
   },
   getters: {
