@@ -63,6 +63,10 @@ export default {
         updateTodo($evt) {
             const newtitle = $evt.target.value
 
+            if (!newtitle) {
+                return
+            }
+
             const payload = {
                 id: this.todo.id,
                 data: {
