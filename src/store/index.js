@@ -31,7 +31,7 @@ export default createStore({
       })
     },
     updateTodo(context, {id, data}) {
-      return axios.post(`http://localhost:3000/${id}`, data)
+      return axios.put(`http://localhost:3000/${id}`, data)
     }
   },
   getters: {

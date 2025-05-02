@@ -61,7 +61,16 @@ export default {
     },
     methods: {
         updateTodo($evt) {
-            console.log($evt.target.value)
+            const newtitle = $evt.target.value
+
+            const payload = {
+                id: this.todo.id,
+                data: {
+                    title: newtitle,
+                    completed: this.todo.completed
+                }
+            }
+            this.$store.dispatch('updateTodo', payload)
         }
     }
 }
