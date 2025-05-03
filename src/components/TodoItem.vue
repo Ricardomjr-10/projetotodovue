@@ -4,7 +4,13 @@
 border-gray-400 last:border-b-0">
                         <div class="flex items-center justify-center 
 mr-2">
-                            <button class="text-gray-400">
+                            <button 
+                            :class="{
+                                'text-green-600':isCompleted,
+                                'text-gray-400': !isCompleted
+                                }"
+                                @click="onCheckClick"
+                            >
                                 <svg class="w-5 h-5" fill="none" 
 stroke="currentColor" viewBox="0 0 24 24" 
 xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" 
@@ -53,6 +59,12 @@ justify-center">
 
 <script>
 export default {
+    data() {
+        return {
+            isCompleted: this.todo.completed
+        }
+    },
+
     props: {
         todo: {
             type: Object,
@@ -75,6 +87,9 @@ export default {
                 }
             }
             this.$store.dispatch('updateTodo', payload)
+        },
+        onCheckClick() {
+            this.isCompleted = !this.isCompleted
         }
     }
 }
