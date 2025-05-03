@@ -7,13 +7,13 @@
     },
     {
       "title": "Estudar Vueasd",
-      "completed": false,
+      "completed": true,
       "id": "2"
     },
     {
-      "id": "3",
-      "title": "Estudar composition API",
-      "completed": false
+      "title": "Estudar composition APIs",
+      "completed": true,
+      "id": "3"
     },
     {
       "id": "828d",
