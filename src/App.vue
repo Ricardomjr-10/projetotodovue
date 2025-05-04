@@ -12,11 +12,11 @@
             <!--/ Todo form -->
 
             <!-- Todo items -->
-            <TodoItems/>
+            <TodoItems v-if="$store.state.todos.length"/>
             <!--/ Todo items -->
 
             <!-- Todo empty -->
-            <TodoEmpty/>
+            <TodoEmpty v-else/>
             <!--/ Todo empty -->
           </template>
         </div>

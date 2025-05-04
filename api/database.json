@@ -1,33 +1,18 @@
 {
   "todos": [
     {
-      "title": "Estudar Vueasd",
+      "title": "tarefa 1",
       "completed": true,
-      "id": "2"
+      "id": "f5c1"
     },
     {
-      "title": "Estudar composition APIs",
-      "completed": true,
-      "id": "3"
-    },
-    {
-      "id": "828d",
-      "title": "resre",
+      "id": "d20a",
+      "title": "tarefa 2",
       "completed": false
     },
     {
-      "id": "dd1b",
-      "title": "dado",
-      "completed": false
-    },
-    {
-      "id": "f531",
-      "title": "teste",
-      "completed": false
-    },
-    {
-      "id": "a23f",
-      "title": "outro",
+      "id": "39a0",
+      "title": "tarefa 3",
       "completed": false
     }
   ]
