@@ -39,6 +39,11 @@ export default createStore({
       return axios.put(`http://localhost:3000/todos/${id}`, data).then((response) => {
         commit('storeTodo', response.data)
       })
+    },
+    deleteTodo(context, id) {
+      return axios.delete(`http://localhost:3000/todos/${id}`).then(() => {
+        
+      })
     }
   },
   getters: {

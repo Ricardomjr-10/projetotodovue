@@ -1,11 +1,6 @@
 {
   "todos": [
     {
-      "title": "Estudar javascriptadda",
-      "completed": true,
-      "id": "1"
-    },
-    {
       "title": "Estudar Vueasd",
       "completed": true,
       "id": "2"
@@ -43,11 +38,6 @@
     {
       "id": "ce07",
       "title": "sa",
-      "completed": false
-    },
-    {
-      "id": "5ed9",
-      "title": "validar",
       "completed": false
     }
   ]
