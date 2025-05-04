@@ -17,6 +17,14 @@ export default createStore({
         state.todos.push(payload)
       }
     },
+
+    deleteTodo(state, id) {
+      const index = state.todos.findIndex(todo => todo.id === id)
+      if (index >= 0) {
+        state.todos.splice(index, 1)
+      } 
+    }
+
   },
   actions: {
     getTodos({ commit }) {
@@ -40,11 +48,12 @@ export default createStore({
         commit('storeTodo', response.data)
       })
     },
-    deleteTodo(context, id) {
+    deleteTodo({commit}, id) {
       return axios.delete(`http://localhost:3000/todos/${id}`).then(() => {
-        
+        commit('deleteTodo', id)
       })
-    }
+    },
+
   },
   getters: {
   },
