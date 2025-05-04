@@ -25,10 +25,12 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import TodoEmpty from './components/TodoEmpty.vue';
 import TodoForm from './components/TodoForm.vue';
 import TodoItems from './components/TodoItems.vue';
 import TodoSpinner from './components/TodoSpinner.vue';
+import { useStore } from 'vuex';
 
 
 export default {
@@ -40,18 +42,19 @@ export default {
     TodoEmpty
   },
 
-  data() {
+  setup() {
+    const loading = ref(false)
+    const store = useStore()
+
+    loading.value = true
+    store.dispatch('getTodos').finally(() => {
+      loading.value = false
+    })
+
     return {
-      loading: false
+      loading,
     }
   },
-
-  created() {
-    this.loading = true
-    this.$store.dispatch('getTodos').finally(() => {
-      this.loading = false
-    })
-  }
 }
 </script>
 
